@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oneii</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ================= BARRA DE NAVEGACIÓN ================= -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#" data-target="inicio" class="nav-link active">Inicio</a></li>
+            <li><a href="#" data-target="mensaje" class="nav-link">Carta</a></li>
+            <li><a href="#" data-target="psicologia" class="nav-link">Psicología</a></li>
+            <li><a href="#" data-target="trivia" class="nav-link">Trivia</a></li>
+            <li><a href="#" data-target="galeria" class="nav-link">Fotos</a></li>
+            <li><a href="#" data-target="musica" class="nav-link">Música</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= CONTENEDOR DE SECCIONES ================= -->
+    <main class="content-container">
+
+        <!-- SECCIÓN 1: INICIO -->
+        <section id="inicio" class="page-section hero-section active-section">
+            <div class="hero-content">
+                <span class="hero-badge"> Especial para ti</span>
+                <h1>Hola, mi vida</h1>
+                <p class="subtitle">Un pequeño rincón para la psiconena favorita del mundo.</p>
+                
+                <!-- Contenedor principal de fotos de bienvenida -->
+                <div class="hero-pics-container">
+                    <!-- Tu foto / Foto juntos -->
+                    <div class="hero-img-container">
+                        <img src="F1.jpeg" alt="Nosotros" class="hero-main-img">
+                    </div>
+                    
+                    <!-- Foto de Micaela (Clickeable) -->
+                    <div class="hero-img-container clickable-cat" id="cat-photo-btn" title="¡Haz clic para ver más de Micaela!">
+                        <img src="cat3.jpeg" alt="El michi" class="hero-main-img">
+                    </div>
+                </div>
+
+                <!-- Galería oculta de Micaela (Aparecerá al hacer clic) -->
+                <div id="cat-gallery" class="hidden-cat-gallery" style="display: none;">
+                    <p class="cat-gallery-title">🐾 ¡Las mejores poses de Micaela! 🐾</p>
+                    <div class="cat-grid">
+                        <img src="cat1.jpeg" alt="Micaela 1" class="cat-mini-img">
+                        <img src="cat2.jpeg" alt="Micaela 2" class="cat-mini-img">
+                    </div>
+                </div>
+
+                <!-- Tarjeta tierna o presentación del michi -->
+                <div class="pet-card">
+                    <p class="pet-title">🐾 <strong>Invitado de honor / Supervisor oficial</strong></p>
+                    <p class="pet-desc">"Aprobado por el Micaela (y vigilando que todo quede perfecto para su psiconena favorita). Haz clic en su foto para ver más de Micaela."</p>
+                </div>
+
+                <p class="hero-description">He preparado este espacio con mucho amor para recordarte lo mucho que significas para mí. Explora el menú de arriba para descubrir cada sorpresita. 💜</p>
+
+                <!-- NUEVA COMPONENTE: RAZONES INTERACTIVAS EN EL INICIO -->
+                <div class="reasons-card" style="margin: 25px auto; text-align: center; max-width: 500px;">
+                    <p class="reasons-title">Razones por las que te amo</p>
+                    <div id="reason-box" class="reason-display">
+                        <p id="reason-text">Haz clic en el botón para descubrir una razón</p>
+                    </div>
+                    <button id="next-reason-btn" class="reason-btn">Quiero leer otra razón</button>
+                </div>
+
+                <!-- Botón rápido para iniciar -->
+                <button class="hero-btn" onclick="document.querySelector('[data-target=\'mensaje\']').click()">Leer cartita 💌</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: CARTA (Limpia, solo con el texto de la carta) -->
+        <section id="mensaje" class="page-section message-section">
+            <div class="container">
+                <h2>Unas palabras para ti 💌</h2>
+                <div class="card-message" style="text-align: left; padding: 30px;">
+                    <p style="margin-bottom: 15px;">Hola, mi vida:</p>
+                    <p style="margin-bottom: 15px;">No soy de los que se la pasan escribiendo cosas románticas ni armando grandes discursos, pero hoy quise hacer algo diferente solo para ti. Quería crear este espacio y dejarte estas palabras para recordarte lo importante que eres para mí. La verdad es que desde que estás en mi vida, todo es mucho mejor. Me encanta la forma en la que llegaste a cambiar mis días, las risas que compartimos y la tranquilidad que siento cada vez que estoy contigo.</p>
+                    <p style="margin-bottom: 15px;">Me haces sentir increíblemente afortunado, valorado y muy feliz. Eres esa persona con la que quiero compartir momentos, apoyarla en todo y cuidarla siempre. Te amo muchísimo. Gracias por ser como eres y por todo lo bonito que me das.</p>
+                    <p style="margin-bottom: 15px;">Entre todas las teorías de la mente y las emociones, tú eres mi favorita de entender y de querer todos los días.</p>
+                    <p style="text-align: right; margin-top: 20px;"><strong>Con todo mi amor, para mi psiconena 💜</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: PSICOLOGÍA -->
+        <section id="psicologia" class="page-section psychology-section">
+            <div class="container">
+                <h2>Teoría de mi amor por ti</h2>
+                <p>Diagnóstico actual: Enamoramiento agudo e incurable de sus ojos y su sonrisa.</p>
+                <div class="psy-card">
+                    <p><em>"Estudio de la mente y las emociones..."</em> Y aun así, descifrar lo hermosa que eres es mi materia favorita.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: TRIVIA -->
+        <section id="trivia" class="page-section trivia-section">
+            <div class="container">
+                <h2>Memoria de la Psiconena </h2>
+                <p>A ver si te acuerdas de estos datos importantes...</p>
+
+                <div class="trivia-question" data-question="1">
+                    <p class="question-text">1. ¿A quién le tirabas hate en tu nota que te respondí?</p>
+                    <div class="options-container">
+                        <button class="option-btn">El 7k</button>
+                        <button class="option-btn">Al clima</button>
+                        <button class="option-btn">Al sol</button>
+                    </div>
+                    <p class="trivia-feedback" style="display: none;">¡Exacto! Jaja, qué buenos tiempos.</p>
+                </div>
+
+                <div class="trivia-question" data-question="2">
+                    <p class="question-text">2. ¿Quién estaba llorando en el vals de sus papás?</p>
+                    <div class="options-container">
+                        <button class="option-btn">La psiconena</button>
+                        <button class="option-btn">Micaela</button>
+                        <button class="option-btn">El operador de los 17 varos</button>
+                    </div>
+                    <p class="trivia-feedback" style="display: none;">¡Obviamente tú, llorona!</p>
+                </div>
+
+                <div class="trivia-question" data-question="3">
+                    <p class="question-text">3. ¿En dónde está Micaela?</p>
+                    <div class="options-container">
+                        <button class="option-btn">En el invernadero</button>
+                        <button class="option-btn">En su cajón</button>
+                        <button class="option-btn">Robándose el pan</button>
+                    </div>
+                    <p class="trivia-feedback" style="display: none;">¡Jajaja clásica pregunta!</p>
+                </div>
+
+                <div class="trivia-question" data-question="4">
+                    <p class="question-text">4. ¿Quién se cayó en el camión?</p>
+                    <div class="options-container">
+                        <button class="option-btn">El ing</button>
+                        <button class="option-btn">El 7k</button>
+                        <button class="option-btn">Micaela</button>
+                    </div>
+                    <p class="trivia-feedback" style="display: none;">¡No se olvida esa tragedia jajaja!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: FOTOS -->
+        <section id="galeria" class="page-section gallery-section">
+            <div class="container">
+                <h2>Nuestros Momentos</h2>
+                <div class="gallery-grid">
+                    <div class="photo-card">
+                        <img src="F1.jpeg" alt="Foto juntos 1">
+                        <p class="photo-caption">Esta me encanta por que describe perfecto el amor<br>que te tengo </p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="F2.jpeg" alt="Foto juntos 2">
+                        <p class="photo-caption">Nosh vemos muy guapos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: MÚSICA -->
+        <section id="musica" class="page-section music-section">
+            <div class="container">
+                <h2>Nuestra Banda Sonora </h2>
+                <p>Las canciones que me recuerdan a ti y a nuestros momentos.</p>
+
+                <div class="playlist-container">
+                    <div class="song-item">
+                        <div class="song-info">
+                            <p class="song-title"> <strong>Cuestion de piel</strong></p>
+                            <p class="song-artist">Luis Miguel</p>
+                        </div>
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1PdgPj8tdE2OAhH40J4f4g?utm_source=generator&theme=0&si=2f09b771b1bf4ba2" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="song-item">
+                        <div class="song-info">
+                            <p class="song-title"> <strong>Si supieras</strong></p>
+                            <p class="song-artist">Kevin Kaarl</p>
+                        </div>
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0bRo3KV2Ocmpa7N6HWEyiH?utm_source=generator&si=e32b3fd0538a4086" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>Hecho con todo mi amor para ti 💜</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- ================= MODAL / VISOR DE FOTOS ================= -->
+    <div id="photoModal" class="modal-overlay" style="display: none;">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Foto ampliada">
+    </div>
+</body>
+</html>
