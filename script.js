@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const respuestasCorrectas = {
         "1": 0, // "El 7k"
         "2": 0, // "La psiconena"
-        "3": 2, // "Robándose el pan"
+        "3": 1, // "Robándose el pan"
         "4": 0  // "El ing"
     };
 
@@ -87,7 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "Por cada plática bonita y los momentos que compartimos.",
         "Porque me impulsas a ser mejor cada día sin darte cuenta.",
         "Porque tus abrazos son mi lugar favorito en el mundo.",
-        "Simplemente, porque eres tú y mi vida es más bonita a tu lado."
+        "Simplemente, porque eres tú y mi vida es más bonita a tu lado.",
+        "Por la forma tan linda en la que cuidas de Micaela.",
+        "Porque cada momento a tu lado se vuelve mi favorito.",
+        "Por tus ojitos hermosos y tu sonrisa que alegra mis días.",
+        "Por tu cintura y esas piernotas."
     ];
 
     const reasonText = document.getElementById("reason-text");
@@ -138,3 +142,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// --- 6. CORAZONES FLOTANTES DE FONDO ---
+    const heartsContainer = document.createElement("div");
+    heartsContainer.className = "hearts-container";
+    document.body.appendChild(heartsContainer);
+
+    const heartSymbols = ["💜", "✨", "🤍", "💖", "🌸"];
+
+    function createHeart() {
+        const heart = document.createElement("span");
+        heart.className = "floating-heart";
+        heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        
+        // Posición horizontal aleatoria y tamaño variable
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 1 + 0.8) + "rem";
+        
+        // Duración de animación aleatoria para que se vea natural
+        const duration = Math.random() * 3 + 4; // Entre 4 y 7 segundos
+        heart.style.animationDuration = duration + "s";
+
+        heartsContainer.appendChild(heart);
+
+        // Eliminar el corazón cuando termine la animación para no saturar la memoria
+        setTimeout(() => {
+            heart.remove();
+        }, duration * 1000);
+    }
+
+    // Generar un nuevo corazón cada 400 milisegundos
+    setInterval(createHeart, 400);
