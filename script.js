@@ -173,3 +173,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Generar un nuevo corazón cada 400 milisegundos
     setInterval(createHeart, 400);
+
+// --- CONTADOR DE TIEMPO JUNTOS ---
+    const startDate = new Date("2026-09-26T00:00:00"); // Fecha de inicio configurada
+
+    function updateCounter() {
+        const now = new Date();
+        const difference = now - startDate;
+
+        if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / 1000 / 60) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+
+            const counterElement = document.getElementById("time-counter");
+            if (counterElement) {
+                counterElement.textContent = `${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos`;
+            }
+        } else {
+            const counterElement = document.getElementById("time-counter");
+            if (counterElement) {
+                counterElement.textContent = "¡Comenzando nuestra historia! 💜";
+            }
+        }
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
